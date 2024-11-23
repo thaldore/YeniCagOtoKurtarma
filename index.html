@@ -1,29 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Oto kurtarma hizmeti - Tek tıkla arayın ve ulaşın!">
-    <title>Oto Kurtarıcı</title>
+    <title>Kurtarıcı Hizmetleri</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="header">
-        <h1>Oto Kurtarıcı</h1>
-        <p>Hızlı ve güvenilir oto kurtarma hizmeti</p>
-        <a href="tel:+905326021749" class="call-button">📞 05326021749</a>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <h1>Yeni Çağ Oto Kurtarma</h1>
+            <a href="tel:+905551234567" class="call-button">Bizi Arayınız</a>
+        </nav>
     </header>
 
-    <section class="services">
-        <h2>Hizmetlerimiz</h2>
-        <p>24 saat acil yol yardım ve oto kurtarma hizmeti sağlıyoruz.</p>
+    <!-- Değişen Resim Galerisi -->
+    <section id="gallery">
+        <div class="slider">
+            <img src="img/oto-kurtarma01.jpg" alt="Resim 1" class="active">
+            <img src="img/oto-kurtarma02.jpg" alt="Resim 2">
+            <img src="img/oto-kurtarma03.jpg" alt="Resim 3">
+        </div>
     </section>
 
-    <footer class="footer">
-        <p>© 2024 Oto Kurtarıcı | <a href="https://www.google.com/maps/place/37%C2%B038'25.7%22N+34%C2%B021'46.3%22E/@37.640463,\
-            34.3622233,19z/data=!3m1!4b1!4m16!1m11!4m10!1m5!1m1!1s0x14d7d180304376eb:0x412a9c5973f20133!2m2!1d34.3627151!2d37.
-            640255!1m3!2m2!1d34.3628782!2d37.6404413!3m3!8m2!3d37.640463!4d34.362867?
-            entry=ttu&g_ep=EgoyMDI0MTExOS4yIKXMDSoASAFQAw%3D%3D target="_blank">Adresimizi bulun</a></p>
-    </footer></body>
-</html>
+    <!-- Hizmetler -->
+    <section id="services">
+        <div class="section-title">
+            <h2>Hizmetlerimiz</h2>
+            <p>Aşağıda profesyonel kurtarıcı hizmetlerimizi bulabilirsiniz:</p>
+        </div>
+        <div class="services-container">
+            <div class="service-box">
+                <h3>Yol Yardımı</h3>
+                <p>Yolda kaldığınızda hızlı ve güvenilir yardım sağlıyoruz.</p>
+            </div>
+            <div class="service-box">
+                <h3>Çekici Hizmeti</h3>
+                <p>Araçlarınızı istediğiniz noktaya güvenle taşıyoruz.</p>
+            </div>
+            <div class="service-box">
+                <h3>Acil Durum Destek</h3>
+                <p>Acil durumlarda 7/24 destek sunuyoruz.</p>
+            </div>
+        </div>
+    </section>
 
+    <!-- Hakkımızda -->
+    <section id="about">
+        <div class="about-container">
+            <div class="image-box">
+                <img src="placeholder.jpg" alt="Hakkımızda Resim">
+            </div>
+            <div class="text-box">
+                <h2>Hakkımızda</h2>
+                <p>Biz, uzun yılların deneyimiyle profesyonel kurtarıcı hizmetleri sunuyoruz. Yolda kalan araçlara ve sürücülere hızlı ve etkili çözümler sağlamak için buradayız. Misyonumuz, güvenilir ve kaliteli hizmet sunarak müşteri memnuniyetini ön planda tutmaktır.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sistem Nasıl İşler -->
+    <section id="how-it-works">
+        <div class="section-title">
+            <h2>Sistem Nasıl İşler</h2>
+            <p>Kurtarıcı hizmetlerimizden nasıl faydalanacağınızı öğrenin:</p>
+        </div>
+        <div class="steps-container">
+            <div class="step-box">
+                <h3>Adım 1</h3>
+                <p>Bizi arayın ve ihtiyacınızı bildirin.</p>
+            </div>
+            <div class="step-box">
+                <h3>Adım 2</h3>
+                <p>Konumunuzu paylaşın ve destek ekibimizi bekleyin.</p>
+            </div>
+            <div class="step-box">
+                <h3>Adım 3</h3>
+                <p>Hızlı bir şekilde yardım alın ve güvenle yolculuğunuza devam edin.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="hizmet-alanlari">
+        <h2>Hizmet Alanları</h2>
+        <div class="hizmet-listesi">
+            <div class="hizmet-karti" onclick="gosterDetay('eregli', 'img/eregli.jpg', 'Ereğli Oto Kurtarma Hizmeti')">
+                <img src="img/eregli.jpg" alt="Ereğli">
+                <p>Ereğli Oto Kurtarma</p>
+            </div>
+            <div class="hizmet-karti" onclick="gosterDetay('konya', 'img/konya.jpg', 'Konya Oto Kurtarma Hizmeti')">
+                <img src="img/konya.jpg" alt="Konya">
+                <p>Konya Oto Kurtarma</p>
+            </div>
+            <div class="hizmet-karti" onclick="gosterDetay('akcakoca', 'img/akcakoca.jpg', 'Akçakoca Oto Kurtarma Hizmeti')">
+                <img src="img/akcakoca.jpg" alt="Akçakoca">
+                <p>Akçakoca Oto Kurtarma</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="hizmet-detay" class="hidden">
+        <img id="detay-resim" src="" alt="Detay Resim">
+        <div id="detay-aciklama"></div>
+        <button onclick="kapatDetay()">Kapat</button>
+    </section>
+      
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>Adres: Örnek Sokak No:123</p>
+            <p>Telefon: <a href="tel:+905551234567">+90 555 123 4567</a></p>
+            <p>Hizmet Saatleri: 7/24</p>
+        </div>
+    </footer>
+</body>
+</html>
