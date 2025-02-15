@@ -1,0 +1,264 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+}
+
+.call-button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.services {
+    padding: 20px;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+@media (max-width: 767px) {
+    .call-button {
+        font-size: 18px;
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 15px 20px;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.call-button {
+    background-color: #f04e30;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.call-button:hover {
+    background-color: #d03e28;
+}
+
+/* Slider Stili */
+.slider-container {
+    width: 100%;
+    max-width: 1200px; /* Maksimum genişlik */
+    height: 300px; /* Yükseklik */
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    width: 300%;
+    animation: slide 9s infinite;
+}
+
+.slider img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* Otomatik Kaydırma Animasyonu */
+@keyframes slide {
+    0% { transform: translateX(0%); }
+    33% { transform: translateX(-100%); }
+    66% { transform: translateX(-200%); }
+    100% { transform: translateX(0%); }
+}
+
+/* Mobil İçin Uyumlu */
+@media (max-width: 768px) {
+    .slider-container {
+        height: 200px;
+    }
+
+    .slider img {
+        height: 200px;
+    }
+}
+
+/* 3 Adımlık Süreç */
+.steps {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+.step-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.step {
+    background: white;
+    padding: 20px;
+    width: 30%;
+    min-width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.step:hover {
+    transform: translateY(-5px);
+}
+
+.step-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+/* Mobil Uyum */
+@media (max-width: 768px) {
+    .step-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .step {
+        width: 90%;
+    }
+}
+
+.service-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.service-item {
+    width: 250px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+.service-item img {
+    width: 100%;
+    height: auto;
+}
+.service-item h3 {
+    margin: 10px 0;
+}
+.service-desc {
+    display: none;
+    padding: 10px;
+}
+.service-item.expanded {
+    width: 300px;
+    background: #f8f8f8;
+}
+.service-item.expanded .service-desc {
+    display: block;
+}
+
+/* Hakkımızda Bölümü */
+.about {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-image {
+    width: 40%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+    width: 50%;
+    text-align: left;
+}
+
+.about-text h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.about-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Mobil Uyum */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image {
+        width: 80%;
+    }
+
+    .about-text {
+        width: 90%;
+        text-align: center;
+    }
+}

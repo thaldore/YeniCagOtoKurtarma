@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Oto kurtarma hizmeti - Tek tıkla arayın ve ulaşın!">
+   
+    <title>Oto Kurtarıcı</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">Oto Kurtarıcı</div>
+        <ul class="nav-links">
+            <li><a href="#services">Hizmetlerimiz</a></li>
+            <li><a href="#steps">Nasıl Çalışır?</a></li>
+            <li><a href="#contact">İletişim</a></li>
+        </ul>
+        <a href="tel:+905326021749" class="call-button">📞 05326021749</a>
+    </nav>
+    
+    <!-- Slider Bölümü -->
+    <div class="slider-container">
+        <div class="slider">
+            <img src="images/slider1.jpg" alt="Oto Kurtarma 1">
+            <img src="images/slider2.jpg" alt="Oto Kurtarma 2">
+            <img src="images/slider3.jpg" alt="Oto Kurtarma 3">
+        </div>
+    </div>
+
+    <header class="header">
+        <h1>Oto Kurtarıcı</h1>
+        <p>Hızlı ve güvenilir oto kurtarma hizmeti</p>
+        <a href="tel:+905326021749" class="call-button">📞 05326021749</a>
+    </header>
+
+    <!-- 3 Adımlı Süreç Bölümü -->
+    <section id="steps" class="steps">
+        <h2>Nasıl Çalışır?</h2>
+        <div class="step-container">
+            <div class="step">
+                <div class="step-icon">📞</div>
+                <h3>1. Adım: Bize Ulaşın</h3>
+                <p>Telefonla bizi arayarak yardım talebinde bulunun.</p>
+            </div>
+            <div class="step">
+                <div class="step-icon">📍</div>
+                <h3>2. Adım: Konumunuzu Bildirin</h3>
+                <p>Bize bulunduğunuz konumu paylaşın.</p>
+            </div>
+            <div class="step">
+                <div class="step-icon">🚗</div>
+                <h3>3. Adım: Size Ulaşmamızı Bekleyin</h3>
+                <p>Ekibimiz en kısa sürede yanınıza gelecektir.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Hizmetlerimiz</h2>
+        <div class="service-container">
+            <div class="service-item" onclick="expandService(this)">
+                <img src="images/service1.jpg" alt="Çekici Hizmeti">
+                <h3>Çekici Hizmeti</h3>
+                <p class="service-desc">Aracınız mı arızalandı? Hızlı ve güvenilir çekici hizmetimizle yanınızdayız.</p>
+            </div>
+            <div class="service-item" onclick="expandService(this)">
+                <img src="images/service2.jpg" alt="Lastik Değişimi">
+                <h3>Lastik Değişimi</h3>
+                <p class="service-desc">Yolda lastik patladıysa endişelenmeyin! Anında lastik değişimi yapıyoruz.</p>
+            </div>
+            <div class="service-item" onclick="expandService(this)">
+                <img src="images/service3.jpg" alt="Yakıt Takviyesi">
+                <h3>Yakıt Takviyesi</h3>
+                <p class="service-desc">Yolda yakıtsız mı kaldınız? En yakın akaryakıt istasyonuna ulaşmanıza yardımcı olabiliriz.</p>
+            </div>
+        </div>
+    </section>
+
+        <!-- Hakkımızda Bölümü -->
+    <section id="about" class="about">
+        <h2>Hakkımızda</h2>
+        <div class="about-container">
+            <img src="images/about.jpg" alt="Oto Kurtarma Ekibimiz" class="about-image">
+            <div class="about-text">
+                <h3>Oto Kurtarıcı Kimdir?</h3>
+                <p>Yolda kaldığınızda size en hızlı ve güvenilir şekilde yardımcı olmak için buradayız.  
+                Profesyonel ekibimizle 7/24 oto kurtarma, çekici hizmeti, lastik değişimi ve yakıt takviyesi sağlıyoruz.</p>
+                <p>Amacımız, aracınızla ilgili sorun yaşadığınızda size hızlı ve güvenli bir çözüm sunmaktır.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <h2>Hizmetlerimiz</h2>
+        <p>24 saat acil yol yardım ve oto kurtarma hizmeti sağlıyoruz.</p>
+    </section>
+
+    <footer class="footer">
+        <p>© 2024 Oto Kurtarıcı | <a href="https://maps.app.goo.gl/JtGJGJegt2m5NHhZ6" target="_blank">Adresimizi bulun</a></p>
+    </footer>
+</body>
+</html>
