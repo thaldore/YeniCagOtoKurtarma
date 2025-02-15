@@ -32,6 +32,7 @@ body {
     text-decoration: none;
     border-radius: 5px;
     white-space: nowrap; /* Metni tek satırda tut */
+    font-size: 14px; /* Mobilde yazı boyutunu küçült */
 }
 
 .call-button:hover {
@@ -120,6 +121,7 @@ body {
     gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
+    flex-wrap: wrap; /* Mobilde tek sütun */
 }
 
 .step {
@@ -131,6 +133,8 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s ease-in-out;
+    flex: 1 1 100%; /* Mobilde tek sütun */
+    margin: 10px 0; /* Mobilde boşluk */
 }
 
 .step:hover {
@@ -163,6 +167,7 @@ body {
     gap: 40px; /* Daha fazla boşluk */
     max-width: 1400px;
     margin: 0 auto;
+    flex-wrap: wrap; /* Mobilde tek sütun */
 }
 
 .about-image {
@@ -170,11 +175,13 @@ body {
     max-width: 500px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1 1 100%; /* Mobilde tek sütun */
 }
 
 .about-text {
     width: 50%;
     text-align: left;
+    flex: 1 1 100%; /* Mobilde tek sütun */
 }
 
 .about-text h3 {
@@ -204,6 +211,7 @@ body {
 .service-wrapper {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    flex-wrap: nowrap; /* Mobilde kaydırılabilir */
 }
 
 .service-item {
@@ -216,6 +224,7 @@ body {
     overflow: hidden;
     text-align: center;
     transition: all 0.3s ease-in-out;
+    min-width: 250px; /* Mobilde minimum genişlik */
 }
 
 .service-item img {
@@ -268,10 +277,10 @@ body {
     bottom: 20px;
     right: 20px;
     background-color: #f04e30;
-    padding: 15px;
+    padding: 15px 25px; /* Dikdörtgen yap */
     color: white;
     text-decoration: none;
-    border-radius: 50%;
+    border-radius: 10px; /* Kenarları yumuşat */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
 }
@@ -295,4 +304,43 @@ body {
 
 .footer a:hover {
     text-decoration: underline;
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .call-button {
+        margin-top: 10px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .step-container {
+        flex-direction: column;
+    }
+
+    .step {
+        width: 100%;
+    }
+
+    .about-container {
+        flex-direction: column;
+    }
+
+    .about-image, .about-text {
+        width: 100%;
+    }
+
+    .service-wrapper {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+    }
+
+    .service-item {
+        scroll-snap-align: start;
+    }
 }
