@@ -4,6 +4,7 @@ body {
     padding: 0;
     text-align: center;
     padding-top: 80px; /* Navbar yüksekliği kadar boşluk bırak */
+    overflow-x: hidden; /* Yatay taşmayı engelle */
 }
 
 .navbar {
@@ -309,22 +310,26 @@ body {
 /* Mobil Uyumluluk */
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row; /* Yatay düzeni koru */
+        align-items: center; /* Öğeleri ortala */
+        padding: 10px 15px; /* Padding'i azalt */
     }
 
     .call-button {
-        margin-top: 10px;
-        width: 100%;
-        text-align: center;
+        margin-top: 0; /* Üst boşluğu kaldır */
+        width: auto; /* Genişliği otomatik yap */
+        font-size: 14px; /* Yazı boyutunu küçült */
+        padding: 8px 12px; /* Padding'i ayarla */
     }
 
     .step-container {
         flex-direction: column;
+        align-items: center; /* Öğeleri ortala */
     }
 
     .step {
-        width: 100%;
+        width: 90%; /* Genişliği artır */
+        margin: 10px auto; /* Otomatik marj ile ortala */
     }
 
     .about-container {
@@ -336,11 +341,15 @@ body {
     }
 
     .service-wrapper {
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
+        flex-wrap: wrap; /* Mobilde tek sütun */
     }
 
     .service-item {
-        scroll-snap-align: start;
+        flex: 0 0 100%; /* Mobilde tam genişlik */
+        margin: 10px 0; /* Boşluk ekle */
+    }
+
+    .service-controls {
+        display: none; /* Mobilde kontrolleri gizle */
     }
 }
