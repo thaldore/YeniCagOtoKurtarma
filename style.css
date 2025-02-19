@@ -34,7 +34,9 @@ body {
     border-radius: 5px;
     white-space: nowrap; /* Metni tek satırda tut */
     font-size: 14px; /* Mobilde yazı boyutunu küçült */
-    margin-left: auto; /* Sağa yasla */
+    display: flex;
+    align-items: center;
+    gap: 5px; /* İkon ve yazı arası boşluk */
 }
 
 .call-button:hover {
@@ -63,6 +65,7 @@ body {
     height: 400px; /* Dikey olarak büyüt */
     background-size: cover;
     background-position: center;
+    flex-shrink: 0; /* Resimlerin boyutunu koru */
 }
 
 .slider-controls {
@@ -83,6 +86,28 @@ body {
     cursor: pointer;
     border-radius: 50%;
     font-size: 20px; /* Büyüt */
+}
+
+.index-container {
+    display: flex;
+    gap: 5px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.index-container button {
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.index-container button.active {
+    background: #f04e30;
 }
 
 /* Header */
@@ -286,6 +311,9 @@ body {
     border-radius: 10px; /* Kenarları yumuşat */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 5px; /* İkon ve yazı arası boşluk */
 }
 
 .fixed-call-button:hover {
