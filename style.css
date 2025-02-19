@@ -46,7 +46,7 @@ body {
 /* Slider */
 .slider-container {
     width: 100%;
-    height: 400px; /* Dikey olarak büyüt */
+    height: 500px; /* Dikey olarak büyüt */
     margin: 20px auto;
     overflow: hidden;
     border-radius: 10px;
@@ -62,7 +62,7 @@ body {
 
 .slider-item {
     width: 100%; /* Her resim tam genişlikte */
-    height: 400px; /* Dikey olarak büyüt */
+    height: 500px; /* Dikey olarak büyüt */
     background-size: cover;
     background-position: center;
     flex-shrink: 0; /* Resimlerin boyutunu koru */
@@ -70,31 +70,28 @@ body {
 
 .slider-controls {
     position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
+    bottom: 20px; /* Yuvarlak butonları resimlerin altına taşı */
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Butonlar arası boşluk */
 }
 
 .control-prev, .control-next {
     background: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
-    padding: 15px; /* Büyüt */
+    padding: 10px;
     cursor: pointer;
     border-radius: 50%;
-    font-size: 20px; /* Büyüt */
+    font-size: 20px;
 }
 
 .index-container {
     display: flex;
     gap: 5px;
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 .index-container button {
@@ -257,7 +254,7 @@ body {
 
 .service-item img {
     width: 100%;
-    height: 200px; /* Resim boyutunu 492x491'e göre ayarla */
+    height: 250px; /* Fotoğrafları yatay olarak daha uzun yap */
     object-fit: cover;
     border-radius: 10px;
 }
