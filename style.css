@@ -34,6 +34,7 @@ body {
     border-radius: 5px;
     white-space: nowrap; /* Metni tek satırda tut */
     font-size: 14px; /* Mobilde yazı boyutunu küçült */
+    margin-left: auto; /* Sağa yasla */
 }
 
 .call-button:hover {
