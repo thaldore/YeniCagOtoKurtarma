@@ -323,19 +323,41 @@ body {
     background-color: #333;
     color: white;
     padding: 20px;
-    text-align: center;
+    text-align: left; /* Sola hizala */
 }
 
-.footer p {
-    margin: 0;
-    font-size: 18px;
-    font-weight: bold;
+.footer-content {
+    display: flex;
+    align-items: flex-start; /* İçerikleri üstten hizala */
+    gap: 20px; /* Harita ve yazı arası boşluk */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.footer iframe {
-    margin-top: 20px;
+.footer-map {
+    flex: 1;
+}
+
+.footer-map iframe {
+    width: 300px;
+    height: 300px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.footer-info {
+    flex: 1;
+    text-align: left;
+}
+
+.footer-info h3 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.footer-info p {
+    margin: 10px 0;
+    font-size: 16px;
 }
 
 /* Mobil Uyumluluk */
@@ -384,5 +406,19 @@ body {
 
     .service-controls {
         display: none; /* Mobilde kontrolleri gizle */
+    }
+
+    .footer-content {
+        flex-direction: column; /* Mobilde dikey hizala */
+        align-items: center; /* Öğeleri ortala */
+    }
+
+    .footer-map iframe {
+        width: 100%; /* Haritayı tam genişlik yap */
+        height: 250px; /* Yüksekliği ayarla */
+    }
+
+    .footer-info {
+        text-align: center; /* Yazıyı ortala */
     }
 }
