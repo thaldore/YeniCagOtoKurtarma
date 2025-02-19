@@ -242,40 +242,44 @@ body {
 
 .service-item {
     flex: 0 0 33.33%;
-    padding: 10px;
+    padding: 20px;
     box-sizing: border-box;
-    cursor: pointer;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    overflow: hidden;
     text-align: center;
-    transition: all 0.3s ease-in-out;
-    min-width: 250px; /* Mobilde minimum genişlik */
+    min-width: 33.33%; /* Her sayfada 3 öğe */
 }
 
 .service-item img {
     width: 100%;
-    height: 250px; /* Fotoğrafları yatay olarak daha uzun yap */
+    height: 200px;
     object-fit: cover;
     border-radius: 10px;
 }
 
 .service-item h3 {
     margin: 10px 0;
+    font-size: 24px;
 }
 
 .service-desc {
     display: none;
-    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
 }
 
-.service-item.expanded {
-    transform: scale(1.1);
-    background: #f8f8f8;
+.details-button {
+    background-color: #f04e30;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
 }
 
-.service-item.expanded .service-desc {
-    display: block;
+.details-button:hover {
+    background-color: #d03e28;
 }
 
 .service-controls {
@@ -400,7 +404,7 @@ body {
     }
 
     .service-item {
-        flex: 0 0 80%; /* Mobilde genişlik */
+        flex: 0 0 100%; /* Mobilde genişlik */
         scroll-snap-align: start; /* Kaydırma davranışı */
     }
 

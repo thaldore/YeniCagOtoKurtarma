@@ -94,12 +94,11 @@ setInterval(() => {
     showService(currentServiceIndex);
 }, 5000); // 5 saniyede bir geçiş
 
-// Hizmet Öğelerini Genişletme
-function expandService(element) {
-    document.querySelectorAll('.service-item').forEach(item => {
-        if (item !== element) {
-            item.classList.remove('expanded');
-        }
+// Detaylar butonuna tıklama
+const detailsButtons = document.querySelectorAll('.details-button');
+detailsButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const serviceDesc = button.nextElementSibling;
+        serviceDesc.style.display = serviceDesc.style.display === 'block' ? 'none' : 'block';
     });
-    element.classList.toggle('expanded');
-}
+});
