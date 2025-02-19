@@ -37,6 +37,7 @@ body {
     display: flex;
     align-items: center;
     gap: 5px; /* İkon ve yazı arası boşluk */
+    margin-right: 20px; /* Sağdan boşluk ekle */
 }
 
 .call-button:hover {
@@ -325,13 +326,16 @@ body {
     text-align: center;
 }
 
-.footer a {
-    color: #f04e30;
-    text-decoration: none;
+.footer p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
 }
 
-.footer a:hover {
-    text-decoration: underline;
+.footer iframe {
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Mobil Uyumluluk */
@@ -368,12 +372,14 @@ body {
     }
 
     .service-wrapper {
-        flex-wrap: wrap; /* Mobilde tek sütun */
+        flex-wrap: nowrap; /* Mobilde yatay kaydırma */
+        overflow-x: auto; /* Yatay kaydırma */
+        scroll-snap-type: x mandatory; /* Kaydırma davranışı */
     }
 
     .service-item {
-        flex: 0 0 100%; /* Mobilde tam genişlik */
-        margin: 10px 0; /* Boşluk ekle */
+        flex: 0 0 80%; /* Mobilde genişlik */
+        scroll-snap-align: start; /* Kaydırma davranışı */
     }
 
     .service-controls {

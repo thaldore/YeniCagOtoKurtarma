@@ -42,6 +42,30 @@ function updateIndexButtons() {
     });
 }
 
+// Mobilde dokunmatik kaydırma
+let touchStartX = 0;
+let touchEndX = 0;
+
+slider.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+});
+
+slider.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].clientX;
+    handleSwipe();
+});
+
+function handleSwipe() {
+    if (touchEndX < touchStartX) {
+        // Sola kaydırma
+        currentSlide = (currentSlide + 1) % sliderItems.length;
+    } else if (touchEndX > touchStartX) {
+        // Sağa kaydırma
+        currentSlide = (currentSlide - 1 + sliderItems.length) % sliderItems.length;
+    }
+    showSlide(currentSlide);
+}
+
 // Hizmet Alanlarını Kaydırma
 const serviceWrapper = document.querySelector('.service-wrapper');
 const serviceItems = document.querySelectorAll('.service-item');
