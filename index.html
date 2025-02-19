@@ -4,33 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Oto kurtarma hizmeti - Tek tıkla arayın ve ulaşın!">
-    <title>Oto Kurtarıcı</title>
+    <title>Yeni Çağ Oto Kurtarma</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">Yeni Çağ Oto Kurtarma</div>
-        <a href="tel:+905326021749" class="call-button">📞 Hemen Ara: 05326021749</a>
+        <a href="tel:+905326021749" class="call-button">
+            <img src="icon/telephone-call.png" alt="Hemen Ara" width="20"> Hemen Ara: 05326021749
+        </a>
     </nav>
 
     <!-- Slider -->
     <div class="slider-container">
         <div class="slider">
-            <img src="img/image1.jpg" alt="Oto Kurtarma 1">
-            <img src="img/image2.jpg" alt="Oto Kurtarma 2">
-            <img src="img/image3.jpg" alt="Oto Kurtarma 3">
-            <img src="img/image4.jpg" alt="Oto Kurtarma 4">
-            <img src="img/image5.jpg" alt="Oto Kurtarma 5">
-            <img src="img/image6.jpg" alt="Oto Kurtarma 6">
-            <img src="img/image7.jpg" alt="Oto Kurtarma 7">
-            <img src="img/image8.jpg" alt="Oto Kurtarma 8">
-            <img src="img/image9.jpg" alt="Oto Kurtarma 9">
-            <img src="img/image10.jpg" alt="Oto Kurtarma 10">
+            <div data-img-url="img/image1.jpg" class="slider-item"></div>
+            <div data-img-url="img/image2.jpg" class="slider-item"></div>
+            <div data-img-url="img/image3.jpg" class="slider-item"></div>
+            <div data-img-url="img/image4.jpg" class="slider-item"></div>
+            <div data-img-url="img/image5.jpg" class="slider-item"></div>
+            <div data-img-url="img/image6.jpg" class="slider-item"></div>
+            <div data-img-url="img/image7.jpg" class="slider-item"></div>
+            <div data-img-url="img/image8.jpg" class="slider-item"></div>
+            <div data-img-url="img/image9.jpg" class="slider-item"></div>
+            <div data-img-url="img/image10.jpg" class="slider-item"></div>
         </div>
         <!-- Slider Kontrolleri -->
         <div class="slider-controls">
             <button class="control-prev">❮</button>
+            <div class="index-container">
+                <!-- Slider index butonları dinamik olarak eklenecek -->
+            </div>
             <button class="control-next">❯</button>
         </div>
     </div>
@@ -46,17 +51,23 @@
         <h2>Hizmetlerimiz</h2>
         <div class="step-container">
             <div class="step">
-                <div class="step-icon">🚗</div>
+                <div class="step-icon">
+                    <img src="icon/tow-truck.png" alt="Oto Kurtarma" width="50">
+                </div>
                 <h3>Oto Kurtarma Hizmeti</h3>
                 <p>7/24 oto kurtarma hizmeti ile yanınızdayız.</p>
             </div>
             <div class="step">
-                <div class="step-icon">🔧</div>
+                <div class="step-icon">
+                    <img src="icon/car-repair.png" alt="Oto Tamir" width="50">
+                </div>
                 <h3>Oto Tamir Hizmeti</h3>
                 <p>Profesyonel tamir ekibimizle hizmetinizdeyiz.</p>
             </div>
             <div class="step">
-                <div class="step-icon">⏰</div>
+                <div class="step-icon">
+                    <img src="icon/schedule.png" alt="Çalışma Saatleri" width="50">
+                </div>
                 <h3>Çalışma Saatlerimiz</h3>
                 <p>
                     Salı: 7/24<br>
@@ -89,17 +100,23 @@
         <h2>Nasıl Çalışır?</h2>
         <div class="step-container">
             <div class="step">
-                <div class="step-icon">📞</div>
+                <div class="step-icon">
+                    <img src="icon/telephone-call.png" alt="Bize Ulaşın" width="50">
+                </div>
                 <h3>1. Adım: Bize Ulaşın</h3>
                 <p>Telefonla bizi arayarak yardım talebinde bulunun.</p>
             </div>
             <div class="step">
-                <div class="step-icon">📍</div>
+                <div class="step-icon">
+                    <img src="icon/map.png" alt="Konumunuzu Bildirin" width="50">
+                </div>
                 <h3>2. Adım: Konumunuzu Bildirin</h3>
                 <p>Bize bulunduğunuz konumu paylaşın.</p>
             </div>
             <div class="step">
-                <div class="step-icon">🚗</div>
+                <div class="step-icon">
+                    <img src="icon/tow-truck.png" alt="Size Ulaşmamızı Bekleyin" width="50">
+                </div>
                 <h3>3. Adım: Size Ulaşmamızı Bekleyin</h3>
                 <p>Ekibimiz en kısa sürede yanınıza gelecektir.</p>
             </div>
@@ -155,11 +172,13 @@
     </section>
 
     <!-- Sabit Hemen Ara Butonu -->
-    <a href="tel:+905326021749" class="fixed-call-button">📞 Hemen Ara</a>
+    <a href="tel:+905326021749" class="fixed-call-button">
+        <img src="icon/telephone-call.png" alt="Hemen Ara" width="20"> Hemen Ara
+    </a>
 
     <!-- Footer -->
     <footer class="footer">
-        <p>© 2024 Oto Kurtarıcı | <a href="https://maps.app.goo.gl/JtGJGJegt2m5NHhZ6" target="_blank">Adresimizi bulun</a></p>
+        <p>© 2024 Yeni Çağ Oto Kurtarma | <a href="https://maps.app.goo.gl/JtGJGJegt2m5NHhZ6" target="_blank">Adresimizi bulun</a></p>
     </footer>
 
     <script src="script.js"></script>
