@@ -90,7 +90,7 @@ function startAutoSlide() {
 function showCard(index) {
     const isMobile = window.innerWidth <= 768;
     const cardWidth = cards[0].offsetWidth; // Kartın genişliğini al
-    const offset = -index * cardWidth; // Mobilde her bir kart için kaydırma
+    const offset = -index * cardWidth; /* Mobilde her bir kart için kaydırma */
     cardWrapper.style.transform = `translateX(${offset}px)`;
     currentCardIndex = index;
 }
