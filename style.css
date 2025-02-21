@@ -246,6 +246,7 @@ body {
     box-sizing: border-box;
     text-align: center;
     min-width: 33.33%; /* Her sayfada 3 öğe */
+    position: relative;
 }
 
 .service-item img {
@@ -265,6 +266,15 @@ body {
     font-size: 16px;
     color: #333;
     margin-top: 10px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
 }
 
 .details-button {
@@ -276,6 +286,7 @@ body {
     cursor: pointer;
     font-size: 14px;
     margin-top: 10px;
+    transition: transform 0.3s ease-in-out;
 }
 
 .details-button:hover {

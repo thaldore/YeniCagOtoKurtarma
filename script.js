@@ -100,5 +100,6 @@ detailsButtons.forEach(button => {
     button.addEventListener('click', () => {
         const serviceDesc = button.nextElementSibling;
         serviceDesc.style.display = serviceDesc.style.display === 'block' ? 'none' : 'block';
+        button.style.transform = serviceDesc.style.display === 'block' ? 'translateY(20px)' : 'translateY(0)';
     });
 });
