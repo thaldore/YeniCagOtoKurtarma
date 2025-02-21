@@ -4,6 +4,11 @@ const prevButton = document.querySelector('.control-prev');
 const nextButton = document.querySelector('.control-next');
 const indexContainer = document.querySelector('.index-container');
 let currentSlide = 0;
+let isDragging = false;
+let startPos = 0;
+let currentTranslate = 0;
+let prevTranslate = 0;
+let animationID = 0;
 
 // Slider resimlerini yükle
 const sliderItems = document.querySelectorAll('.slider-item');
@@ -42,28 +47,49 @@ function updateIndexButtons() {
     });
 }
 
-// Mobilde dokunmatik kaydırma
-let touchStartX = 0;
-let touchEndX = 0;
+// Dokunmatik kaydırma için olay dinleyicileri
+slider.addEventListener('touchstart', touchStart);
+slider.addEventListener('touchmove', touchMove);
+slider.addEventListener('touchend', touchEnd);
 
-slider.addEventListener('touchstart', (e) => {
-    touchStartX = e.touches[0].clientX;
-});
+function touchStart(event) {
+    isDragging = true;
+    startPos = event.touches[0].clientX;
+    animationID = requestAnimationFrame(animation);
+    slider.style.transition = 'none'; // Kaydırma sırasında geçiş efekti olmasın
+}
 
-slider.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].clientX;
-    handleSwipe();
-});
-
-function handleSwipe() {
-    if (touchEndX < touchStartX) {
-        // Sola kaydırma
-        currentSlide = (currentSlide + 1) % sliderItems.length;
-    } else if (touchEndX > touchStartX) {
-        // Sağa kaydırma
-        currentSlide = (currentSlide - 1 + sliderItems.length) % sliderItems.length;
+function touchMove(event) {
+    if (isDragging) {
+        const currentPosition = event.touches[0].clientX;
+        currentTranslate = prevTranslate + currentPosition - startPos;
     }
-    showSlide(currentSlide);
+}
+
+function touchEnd() {
+    isDragging = false;
+    cancelAnimationFrame(animationID);
+    const movedBy = currentTranslate - prevTranslate;
+
+    // Eğer yeterince kaydırma yapıldıysa bir sonraki veya önceki slayta geç
+    if (movedBy < -100 && currentSlide < sliderItems.length - 1) {
+        currentSlide += 1;
+    } else if (movedBy > 100 && currentSlide > 0) {
+        currentSlide -= 1;
+    }
+
+    // Slaytı konumlandır
+    setSliderPosition();
+    slider.style.transition = 'transform 0.5s ease-in-out'; // Geçiş efekti geri ekle
+}
+
+function animation() {
+    setSliderPosition();
+    if (isDragging) requestAnimationFrame(animation);
+}
+
+function setSliderPosition() {
+    slider.style.transform = `translateX(${currentTranslate}px)`;
 }
 
 // Kart Slider Kontrolleri
@@ -74,8 +100,8 @@ const cardNext = document.querySelector('.card-next');
 let currentCardIndex = 0;
 let autoSlideInterval;
 
-// Otomatik kayma süresi (20 saniye)
-const autoSlideDuration = 20000;
+// Otomatik kayma süresi (15 saniye)
+const autoSlideDuration = 15000;
 
 // Otomatik kayma fonksiyonu
 function startAutoSlide() {
