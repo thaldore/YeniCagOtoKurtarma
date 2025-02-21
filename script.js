@@ -72,6 +72,19 @@ const cards = document.querySelectorAll('.card');
 const cardPrev = document.querySelector('.card-prev');
 const cardNext = document.querySelector('.card-next');
 let currentCardIndex = 0;
+let autoSlideInterval;
+
+// Otomatik kayma süresi (20 saniye)
+const autoSlideDuration = 20000;
+
+// Otomatik kayma fonksiyonu
+function startAutoSlide() {
+    autoSlideInterval = setInterval(() => {
+        const isMobile = window.innerWidth <= 768;
+        currentCardIndex = (currentCardIndex + 1) % cards.length;
+        showCard(currentCardIndex);
+    }, autoSlideDuration);
+}
 
 // Masaüstünde 3 kart, mobilde 1 kart göster
 function showCard(index) {
@@ -82,31 +95,33 @@ function showCard(index) {
     currentCardIndex = index;
 }
 
+// Otomatik kaymayı başlat
+startAutoSlide();
+
+// Önceki ve sonraki butonları
 cardPrev.addEventListener('click', () => {
-    const isMobile = window.innerWidth <= 768;
+    clearInterval(autoSlideInterval); // Otomatik kaymayı durdur
     currentCardIndex = (currentCardIndex - 1 + cards.length) % cards.length;
     showCard(currentCardIndex);
+    startAutoSlide(); // Otomatik kaymayı yeniden başlat
 });
 
 cardNext.addEventListener('click', () => {
-    const isMobile = window.innerWidth <= 768;
+    clearInterval(autoSlideInterval); // Otomatik kaymayı durdur
     currentCardIndex = (currentCardIndex + 1) % cards.length;
     showCard(currentCardIndex);
+    startAutoSlide(); // Otomatik kaymayı yeniden başlat
 });
-
-setInterval(() => {
-    const isMobile = window.innerWidth <= 768;
-    currentCardIndex = (currentCardIndex + 1) % cards.length;
-    showCard(currentCardIndex);
-}, 5000); // 5 saniyede bir geçiş
 
 cardWrapper.addEventListener('touchstart', (e) => {
     touchStartX = e.touches[0].clientX;
+    clearInterval(autoSlideInterval); // Dokunmatik müdahalede otomatik kaymayı durdur
 });
 
 cardWrapper.addEventListener('touchend', (e) => {
     touchEndX = e.changedTouches[0].clientX;
     handleSwipe();
+    startAutoSlide(); // Dokunmatik müdahale sonrası otomatik kaymayı yeniden başlat
 });
 
 function handleSwipe() {
