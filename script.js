@@ -67,7 +67,7 @@ function handleSwipe() {
 }
 
 // Hizmet Alanlarını Kaydırma
-const serviceInnerContainer = document.querySelector('.service-inner-container');
+const serviceWrapper = document.querySelector('.service-wrapper');
 const serviceItems = document.querySelectorAll('.service-item');
 const servicePrev = document.querySelector('.service-prev');
 const serviceNext = document.querySelector('.service-next');
@@ -75,7 +75,7 @@ let currentServiceIndex = 0;
 
 function showService(index) {
     const offset = -index * 33.33;
-    serviceInnerContainer.style.transform = `translateX(${offset}%)`;
+    serviceWrapper.style.transform = `translateX(${offset}%)`;
     currentServiceIndex = index;
 }
 
@@ -92,4 +92,42 @@ serviceNext.addEventListener('click', () => {
 setInterval(() => {
     currentServiceIndex = (currentServiceIndex + 1) % serviceItems.length;
     showService(currentServiceIndex);
+}, 5000); // 5 saniyede bir geçiş
+
+// Detaylar butonuna tıklama
+const detailsButtons = document.querySelectorAll('.details-button');
+detailsButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const serviceDesc = button.nextElementSibling;
+        serviceDesc.style.display = serviceDesc.style.display === 'block' ? 'none' : 'block';
+        button.style.transform = serviceDesc.style.display === 'block' ? 'translateY(20px)' : 'translateY(0)';
+    });
+});
+
+// Kart Slider Kontrolleri
+const cardWrapper = document.querySelector('.card-wrapper');
+const cards = document.querySelectorAll('.card');
+const cardPrev = document.querySelector('.card-prev');
+const cardNext = document.querySelector('.card-next');
+let currentCardIndex = 0;
+
+function showCard(index) {
+    const offset = -index * 33.33;
+    cardWrapper.style.transform = `translateX(${offset}%)`;
+    currentCardIndex = index;
+}
+
+cardPrev.addEventListener('click', () => {
+    currentCardIndex = (currentCardIndex - 1 + cards.length) % cards.length;
+    showCard(currentCardIndex);
+});
+
+cardNext.addEventListener('click', () => {
+    currentCardIndex = (currentCardIndex + 1) % cards.length;
+    showCard(currentCardIndex);
+});
+
+setInterval(() => {
+    currentCardIndex = (currentCardIndex + 1) % cards.length;
+    showCard(currentCardIndex);
 }, 5000); // 5 saniyede bir geçiş
