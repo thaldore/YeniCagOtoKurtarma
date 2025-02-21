@@ -3,8 +3,8 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    padding-top: 80px;
-    overflow-x: hidden;
+    padding-top: 80px; /* Navbar yüksekliği kadar boşluk bırak */
+    overflow-x: hidden; /* Yatay taşmayı engelle */
 }
 
 .navbar {
@@ -32,12 +32,12 @@ body {
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    white-space: nowrap;
-    font-size: 14px;
+    white-space: nowrap; /* Metni tek satırda tut */
+    font-size: 14px; /* Mobilde yazı boyutunu küçült */
     display: flex;
     align-items: center;
-    gap: 5px;
-    margin-right: 20px;
+    gap: 5px; /* İkon ve yazı arası boşluk */
+    margin-right: 20px; /* Sağdan boşluk ekle */
 }
 
 .call-button:hover {
@@ -47,7 +47,7 @@ body {
 /* Slider */
 .slider-container {
     width: 100%;
-    height: 500px;
+    height: 500px; /* Dikey olarak büyüt */
     margin: 20px auto;
     overflow: hidden;
     border-radius: 10px;
@@ -57,27 +57,27 @@ body {
 
 .slider {
     display: flex;
-    width: 100%;
-    transition: transform 0.5s ease-in-out;
+    width: 100%; /* Her seferinde tek resim göster */
+    transition: transform 0.5s ease-in-out; /* Geçiş efekti */
 }
 
 .slider-item {
-    width: 100%;
-    height: 500px;
+    width: 100%; /* Her resim tam genişlikte */
+    height: 500px; /* Dikey olarak büyüt */
     background-size: cover;
     background-position: center;
-    flex-shrink: 0;
+    flex-shrink: 0; /* Resimlerin boyutunu koru */
 }
 
 .slider-controls {
     position: absolute;
-    bottom: 20px;
+    bottom: 20px; /* Yuvarlak butonları resimlerin altına taşı */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 10px; /* Butonlar arası boşluk */
 }
 
 .control-prev, .control-next {
@@ -125,7 +125,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 10px; /* Boşluk ekle */
 }
 
 .header-call-button {
@@ -147,7 +147,7 @@ body {
     gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Mobilde tek sütun */
 }
 
 .step {
@@ -159,8 +159,8 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s ease-in-out;
-    flex: 1 1 100%;
-    margin: 10px 0;
+    flex: 1 1 100%; /* Mobilde tek sütun */
+    margin: 10px 0; /* Mobilde boşluk */
 }
 
 .step:hover {
@@ -190,34 +190,34 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 40px;
+    gap: 40px; /* Daha fazla boşluk */
     max-width: 1400px;
     margin: 0 auto;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Mobilde tek sütun */
 }
 
 .about-image {
-    width: 50%;
+    width: 50%; /* Büyüt */
     max-width: 500px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    flex: 1 1 100%;
+    flex: 1 1 100%; /* Mobilde tek sütun */
 }
 
 .about-text {
     width: 50%;
     text-align: left;
-    flex: 1 1 100%;
+    flex: 1 1 100%; /* Mobilde tek sütun */
 }
 
 .about-text h3 {
     font-size: 24px;
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Daha fazla boşluk */
 }
 
 .about-text p {
     font-size: 16px;
-    line-height: 1.8;
+    line-height: 1.8; /* Daha fazla boşluk */
     color: #333;
 }
 
@@ -226,7 +226,6 @@ body {
     text-align: center;
     padding: 40px 20px;
     position: relative;
-    overflow: hidden; /* Taşan içeriği gizle */
 }
 
 .service-container {
@@ -236,18 +235,23 @@ body {
 }
 
 .service-wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.service-inner-container {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    width: 100%; /* Tam genişlik */
+    width: 100%;
 }
 
 .service-item {
-    flex: 0 0 100%; /* Mobilde tam genişlik */
+    flex: 0 0 33.33%;
     padding: 20px;
     box-sizing: border-box;
     text-align: center;
-    min-width: 100%; /* Mobilde tam genişlik */
-    scroll-snap-align: start; /* Kaydırma davranışı */
+    min-width: 33.33%; /* Her sayfada 3 öğe */
+    position: relative;
 }
 
 .service-item img {
@@ -263,9 +267,35 @@ body {
 }
 
 .service-desc {
+    display: none;
     font-size: 16px;
     color: #333;
     margin-top: 10px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.details-button {
+    background-color: #f04e30;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.details-button:hover {
+    background-color: #d03e28;
 }
 
 .service-controls {
@@ -289,19 +319,22 @@ body {
 
 /* Mobil Uyumluluk */
 @media (max-width: 768px) {
-    .service-wrapper {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory; /* Kaydırma davranışı */
-    }
-
     .service-item {
-        flex: 0 0 100%; /* Mobilde tam genişlik */
-        min-width: 100%; /* Mobilde tam genişlik */
+        flex: 0 0 100%; /* Mobilde genişlik */
     }
 
     .service-controls {
         display: none; /* Mobilde kontrolleri gizle */
+    }
+
+    .service-inner-container {
+        flex-wrap: nowrap; /* Mobilde yatay kaydırma */
+        overflow-x: auto; /* Yatay kaydırma */
+        scroll-snap-type: x mandatory; /* Kaydırma davranışı */
+    }
+
+    .service-item {
+        scroll-snap-align: start; /* Kaydırma davranışı */
     }
 }
 
@@ -311,15 +344,15 @@ body {
     bottom: 20px;
     right: 20px;
     background-color: #f04e30;
-    padding: 15px 25px;
+    padding: 15px 25px; /* Dikdörtgen yap */
     color: white;
     text-decoration: none;
-    border-radius: 10px;
+    border-radius: 10px; /* Kenarları yumuşat */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 5px; /* İkon ve yazı arası boşluk */
 }
 
 .fixed-call-button:hover {
@@ -331,13 +364,13 @@ body {
     background-color: #333;
     color: white;
     padding: 20px;
-    text-align: left;
+    text-align: left; /* Sola hizala */
 }
 
 .footer-content {
     display: flex;
-    align-items: flex-start;
-    gap: 20px;
+    align-items: flex-start; /* İçerikleri üstten hizala */
+    gap: 20px; /* Harita ve yazı arası boşluk */
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -371,26 +404,26 @@ body {
 /* Mobil Uyumluluk */
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: row;
-        align-items: center;
-        padding: 10px 15px;
+        flex-direction: row; /* Yatay düzeni koru */
+        align-items: center; /* Öğeleri ortala */
+        padding: 10px 15px; /* Padding'i azalt */
     }
 
     .call-button {
-        margin-top: 0;
-        width: auto;
-        font-size: 14px;
-        padding: 8px 12px;
+        margin-top: 0; /* Üst boşluğu kaldır */
+        width: auto; /* Genişliği otomatik yap */
+        font-size: 14px; /* Yazı boyutunu küçült */
+        padding: 8px 12px; /* Padding'i ayarla */
     }
 
     .step-container {
         flex-direction: column;
-        align-items: center;
+        align-items: center; /* Öğeleri ortala */
     }
 
     .step {
-        width: 90%;
-        margin: 10px auto;
+        width: 90%; /* Genişliği artır */
+        margin: 10px auto; /* Otomatik marj ile ortala */
     }
 
     .about-container {
@@ -402,31 +435,31 @@ body {
     }
 
     .service-wrapper {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
+        flex-wrap: nowrap; /* Mobilde yatay kaydırma */
+        overflow-x: auto; /* Yatay kaydırma */
+        scroll-snap-type: x mandatory; /* Kaydırma davranışı */
     }
 
     .service-item {
-        flex: 0 0 100%;
-        scroll-snap-align: start;
+        flex: 0 0 100%; /* Mobilde genişlik */
+        scroll-snap-align: start; /* Kaydırma davranışı */
     }
 
     .service-controls {
-        display: none;
+        display: none; /* Mobilde kontrolleri gizle */
     }
 
     .footer-content {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* Mobilde dikey hizala */
+        align-items: center; /* Öğeleri ortala */
     }
 
     .footer-map iframe {
-        width: 100%;
-        height: 250px;
+        width: 100%; /* Haritayı tam genişlik yap */
+        height: 250px; /* Yüksekliği ayarla */
     }
 
     .footer-info {
-        text-align: center;
+        text-align: center; /* Yazıyı ortala */
     }
 }

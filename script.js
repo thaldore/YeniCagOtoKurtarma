@@ -67,15 +67,15 @@ function handleSwipe() {
 }
 
 // Hizmet Alanlarını Kaydırma
-const serviceWrapper = document.querySelector('.service-wrapper');
+const serviceInnerContainer = document.querySelector('.service-inner-container');
 const serviceItems = document.querySelectorAll('.service-item');
 const servicePrev = document.querySelector('.service-prev');
 const serviceNext = document.querySelector('.service-next');
 let currentServiceIndex = 0;
 
 function showService(index) {
-    const offset = -index * 100; // Mobilde tam genişlik için 100%
-    serviceWrapper.style.transform = `translateX(${offset}%)`;
+    const offset = -index * 33.33;
+    serviceInnerContainer.style.transform = `translateX(${offset}%)`;
     currentServiceIndex = index;
 }
 
@@ -89,7 +89,6 @@ serviceNext.addEventListener('click', () => {
     showService(currentServiceIndex);
 });
 
-// Mobilde otomatik kaydırma
 setInterval(() => {
     currentServiceIndex = (currentServiceIndex + 1) % serviceItems.length;
     showService(currentServiceIndex);
