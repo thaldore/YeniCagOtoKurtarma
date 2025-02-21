@@ -4,6 +4,11 @@ const prevButton = document.querySelector('.control-prev');
 const nextButton = document.querySelector('.control-next');
 const indexContainer = document.querySelector('.index-container');
 let currentSlide = 0;
+let isDragging = false;
+let startPos = 0;
+let currentTranslate = 0;
+let prevTranslate = 0;
+let animationID = 0;
 
 // Slider resimlerini yükle
 const sliderItems = document.querySelectorAll('.slider-item');
@@ -42,28 +47,57 @@ function updateIndexButtons() {
     });
 }
 
-// Mobilde dokunmatik kaydırma
-let touchStartX = 0;
-let touchEndX = 0;
-
-slider.addEventListener('touchstart', (e) => {
-    touchStartX = e.touches[0].clientX;
+// Dokunmatik kaydırma işlemleri
+sliderItems.forEach((item, index) => {
+    item.addEventListener('touchstart', touchStart(index));
+    item.addEventListener('touchend', touchEnd);
+    item.addEventListener('touchmove', touchMove);
 });
 
-slider.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].clientX;
-    handleSwipe();
-});
+function touchStart(index) {
+    return function (event) {
+        startPos = event.touches[0].clientX;
+        isDragging = true;
+        animationID = requestAnimationFrame(animation);
+        slider.classList.add('grabbing');
+    };
+}
 
-function handleSwipe() {
-    if (touchEndX < touchStartX) {
-        // Sola kaydırma
-        currentSlide = (currentSlide + 1) % sliderItems.length;
-    } else if (touchEndX > touchStartX) {
-        // Sağa kaydırma
-        currentSlide = (currentSlide - 1 + sliderItems.length) % sliderItems.length;
+function touchMove(event) {
+    if (isDragging) {
+        const currentPosition = event.touches[0].clientX;
+        currentTranslate = prevTranslate + currentPosition - startPos;
     }
-    showSlide(currentSlide);
+}
+
+function touchEnd() {
+    cancelAnimationFrame(animationID);
+    isDragging = false;
+    const movedBy = currentTranslate - prevTranslate;
+
+    if (movedBy < -100 && currentSlide < sliderItems.length - 1) {
+        currentSlide += 1;
+    } else if (movedBy > 100 && currentSlide > 0) {
+        currentSlide -= 1;
+    }
+
+    setPositionByIndex();
+    slider.classList.remove('grabbing');
+}
+
+function animation() {
+    setSliderPosition();
+    if (isDragging) requestAnimationFrame(animation);
+}
+
+function setPositionByIndex() {
+    currentTranslate = currentSlide * -window.innerWidth;
+    prevTranslate = currentTranslate;
+    setSliderPosition();
+}
+
+function setSliderPosition() {
+    slider.style.transform = `translateX(${currentTranslate}px)`;
 }
 
 // Kart Slider Kontrolleri
@@ -112,7 +146,6 @@ cardNext.addEventListener('click', () => {
     showCard(currentCardIndex);
     startAutoSlide(); // Otomatik kaymayı yeniden başlat
 });
-
 
 cardWrapper.addEventListener('touchstart', (e) => {
     touchStartX = e.touches[0].clientX;
