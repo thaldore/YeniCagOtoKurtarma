@@ -74,8 +74,8 @@ const cardNext = document.querySelector('.card-next');
 let currentCardIndex = 0;
 let autoSlideInterval;
 
-// Otomatik kayma süresi (15 saniye)
-const autoSlideDuration = 15000;
+// Otomatik kayma süresi (20 saniye)
+const autoSlideDuration = 20000;
 
 // Otomatik kayma fonksiyonu
 function startAutoSlide() {
@@ -90,7 +90,7 @@ function startAutoSlide() {
 function showCard(index) {
     const isMobile = window.innerWidth <= 768;
     const cardWidth = cards[0].offsetWidth; // Kartın genişliğini al
-    const offset = -index * cardWidth; /* Mobilde her bir kart için kaydırma */
+    const offset = -index * cardWidth; // Mobilde her bir kart için kaydırma
     cardWrapper.style.transform = `translateX(${offset}px)`;
     currentCardIndex = index;
 }
@@ -112,6 +112,7 @@ cardNext.addEventListener('click', () => {
     showCard(currentCardIndex);
     startAutoSlide(); // Otomatik kaymayı yeniden başlat
 });
+
 
 cardWrapper.addEventListener('touchstart', (e) => {
     touchStartX = e.touches[0].clientX;
