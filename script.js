@@ -66,44 +66,6 @@ function handleSwipe() {
     showSlide(currentSlide);
 }
 
-// Hizmet Alanlarını Kaydırma
-const serviceWrapper = document.querySelector('.service-wrapper');
-const serviceItems = document.querySelectorAll('.service-item');
-const servicePrev = document.querySelector('.service-prev');
-const serviceNext = document.querySelector('.service-next');
-let currentServiceIndex = 0;
-
-function showService(index) {
-    const offset = -index * 33.33;
-    serviceWrapper.style.transform = `translateX(${offset}%)`;
-    currentServiceIndex = index;
-}
-
-servicePrev.addEventListener('click', () => {
-    currentServiceIndex = (currentServiceIndex - 1 + serviceItems.length) % serviceItems.length;
-    showService(currentServiceIndex);
-});
-
-serviceNext.addEventListener('click', () => {
-    currentServiceIndex = (currentServiceIndex + 1) % serviceItems.length;
-    showService(currentServiceIndex);
-});
-
-setInterval(() => {
-    currentServiceIndex = (currentServiceIndex + 1) % serviceItems.length;
-    showService(currentServiceIndex);
-}, 5000); // 5 saniyede bir geçiş
-
-// Detaylar butonuna tıklama
-const detailsButtons = document.querySelectorAll('.details-button');
-detailsButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const serviceDesc = button.nextElementSibling;
-        serviceDesc.style.display = serviceDesc.style.display === 'block' ? 'none' : 'block';
-        button.style.transform = serviceDesc.style.display === 'block' ? 'translateY(20px)' : 'translateY(0)';
-    });
-});
-
 // Kart Slider Kontrolleri
 const cardWrapper = document.querySelector('.card-wrapper');
 const cards = document.querySelectorAll('.card');
@@ -111,23 +73,50 @@ const cardPrev = document.querySelector('.card-prev');
 const cardNext = document.querySelector('.card-next');
 let currentCardIndex = 0;
 
+// Masaüstünde 3 kart, mobilde 1 kart göster
 function showCard(index) {
-    const offset = -index * 33.33;
+    const isMobile = window.innerWidth <= 768;
+    const offset = isMobile ? -index * 100 : -index * (100 / 3); // Mobilde 1 kart, masaüstünde 3 kart
     cardWrapper.style.transform = `translateX(${offset}%)`;
     currentCardIndex = index;
 }
 
 cardPrev.addEventListener('click', () => {
-    currentCardIndex = (currentCardIndex - 1 + cards.length) % cards.length;
+    const isMobile = window.innerWidth <= 768;
+    currentCardIndex = (currentCardIndex - (isMobile ? 1 : 3) + cards.length) % cards.length;
     showCard(currentCardIndex);
 });
 
 cardNext.addEventListener('click', () => {
-    currentCardIndex = (currentCardIndex + 1) % cards.length;
+    const isMobile = window.innerWidth <= 768;
+    currentCardIndex = (currentCardIndex + (isMobile ? 1 : 3)) % cards.length;
     showCard(currentCardIndex);
 });
 
 setInterval(() => {
-    currentCardIndex = (currentCardIndex + 1) % cards.length;
+    const isMobile = window.innerWidth <= 768;
+    currentCardIndex = (currentCardIndex + (isMobile ? 1 : 3)) % cards.length;
     showCard(currentCardIndex);
 }, 5000); // 5 saniyede bir geçiş
+
+
+cardWrapper.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+});
+
+cardWrapper.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].clientX;
+    handleSwipe();
+});
+
+function handleSwipe() {
+    const isMobile = window.innerWidth <= 768;
+    if (touchEndX < touchStartX) {
+        // Sola kaydırma
+        currentCardIndex = (currentCardIndex + (isMobile ? 1 : 3)) % cards.length;
+    } else if (touchEndX > touchStartX) {
+        // Sağa kaydırma
+        currentCardIndex = (currentCardIndex - (isMobile ? 1 : 3) + cards.length) % cards.length;
+    }
+    showCard(currentCardIndex);
+}

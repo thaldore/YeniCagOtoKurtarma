@@ -221,98 +221,6 @@ body {
     color: #333;
 }
 
-/* Hizmet Alanlarımız */
-.service-areas {
-    text-align: center;
-    padding: 40px 20px;
-    position: relative;
-}
-
-.service-container {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-.service-wrapper {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    flex-wrap: nowrap; /* Mobilde kaydırılabilir */
-}
-
-.service-item {
-    flex: 0 0 33.33%;
-    padding: 20px;
-    box-sizing: border-box;
-    text-align: center;
-    min-width: 33.33%; /* Her sayfada 3 öğe */
-    position: relative;
-}
-
-.service-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.service-item h3 {
-    margin: 10px 0;
-    font-size: 24px;
-}
-
-.service-desc {
-    display: none;
-    font-size: 16px;
-    color: #333;
-    margin-top: 10px;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: white;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 1;
-}
-
-.details-button {
-    background-color: #f04e30;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 14px;
-    margin-top: 10px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.details-button:hover {
-    background-color: #d03e28;
-}
-
-.service-controls {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-}
-
-.service-prev, .service-next {
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 50%;
-}
-
-/* */
 /* Kart Slider */
 .card-slider {
     text-align: center;
@@ -333,12 +241,13 @@ body {
 }
 
 .card {
-    flex: 0 0 33.33%;
+    flex: 0 0 33.33%; /* Masaüstünde 3 kart */
     padding: 20px;
     box-sizing: border-box;
     text-align: center;
-    min-width: 33.33%; /* Her sayfada 3 öğe */
+    min-width: 33.33%; /* Masaüstünde 3 kart */
     position: relative;
+    scroll-snap-align: start; /* Kaydırma davranışı */
 }
 
 .card img {
@@ -381,11 +290,21 @@ body {
 /* Mobil Uyumluluk */
 @media (max-width: 768px) {
     .card {
-        flex: 0 0 100%; /* Mobilde genişlik */
+        flex: 0 0 100%; /* Mobilde tam genişlik */
+        min-width: 100%; /* Mobilde tam genişlik */
     }
 
     .card-controls {
         display: none; /* Mobilde kontrolleri gizle */
+    }
+
+    .card-container {
+        overflow-x: auto; /* Yatay kaydırma */
+        scroll-snap-type: x mandatory; /* Kaydırma davranışı */
+    }
+
+    .card-wrapper {
+        scroll-snap-type: x mandatory; /* Kaydırma davranışı */
     }
 }
 
