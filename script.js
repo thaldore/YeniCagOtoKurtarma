@@ -94,5 +94,3 @@ setInterval(() => {
     currentServiceIndex = (currentServiceIndex + 1) % serviceItems.length;
     showService(currentServiceIndex);
 }, 5000); // 5 saniyede bir geçiş
-
-

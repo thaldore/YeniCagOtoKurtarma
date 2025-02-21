@@ -238,8 +238,7 @@ body {
 .service-wrapper {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    flex-wrap: nowrap;
-    width: 100%; /* Mobilde tam genişlik */
+    width: 100%; /* Tam genişlik */
 }
 
 .service-item {
@@ -248,7 +247,6 @@ body {
     box-sizing: border-box;
     text-align: center;
     min-width: 100%; /* Mobilde tam genişlik */
-    position: relative;
     scroll-snap-align: start; /* Kaydırma davranışı */
 }
 
@@ -288,7 +286,6 @@ body {
     cursor: pointer;
     border-radius: 50%;
 }
-
 
 /* Mobil Uyumluluk */
 @media (max-width: 768px) {
