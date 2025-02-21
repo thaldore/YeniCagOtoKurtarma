@@ -74,7 +74,7 @@ const serviceNext = document.querySelector('.service-next');
 let currentServiceIndex = 0;
 
 function showService(index) {
-    const offset = -index * 33.33;
+    const offset = -index * 100; // Mobilde tam genişlik için 100%
     serviceWrapper.style.transform = `translateX(${offset}%)`;
     currentServiceIndex = index;
 }
@@ -89,7 +89,10 @@ serviceNext.addEventListener('click', () => {
     showService(currentServiceIndex);
 });
 
+// Mobilde otomatik kaydırma
 setInterval(() => {
     currentServiceIndex = (currentServiceIndex + 1) % serviceItems.length;
     showService(currentServiceIndex);
 }, 5000); // 5 saniyede bir geçiş
+
+

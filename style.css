@@ -226,6 +226,7 @@ body {
     text-align: center;
     padding: 40px 20px;
     position: relative;
+    overflow: hidden; /* Taşan içeriği gizle */
 }
 
 .service-container {
@@ -238,15 +239,17 @@ body {
     display: flex;
     transition: transform 0.5s ease-in-out;
     flex-wrap: nowrap;
+    width: 100%; /* Mobilde tam genişlik */
 }
 
 .service-item {
-    flex: 0 0 33.33%;
+    flex: 0 0 100%; /* Mobilde tam genişlik */
     padding: 20px;
     box-sizing: border-box;
     text-align: center;
-    min-width: 33.33%;
+    min-width: 100%; /* Mobilde tam genişlik */
     position: relative;
+    scroll-snap-align: start; /* Kaydırma davranışı */
 }
 
 .service-item img {
@@ -284,6 +287,25 @@ body {
     padding: 10px;
     cursor: pointer;
     border-radius: 50%;
+}
+
+
+/* Mobil Uyumluluk */
+@media (max-width: 768px) {
+    .service-wrapper {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory; /* Kaydırma davranışı */
+    }
+
+    .service-item {
+        flex: 0 0 100%; /* Mobilde tam genişlik */
+        min-width: 100%; /* Mobilde tam genişlik */
+    }
+
+    .service-controls {
+        display: none; /* Mobilde kontrolleri gizle */
+    }
 }
 
 /* Sabit Hemen Ara Butonu */
