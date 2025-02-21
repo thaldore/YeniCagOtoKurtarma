@@ -76,29 +76,29 @@ let currentCardIndex = 0;
 // Masaüstünde 3 kart, mobilde 1 kart göster
 function showCard(index) {
     const isMobile = window.innerWidth <= 768;
-    const offset = isMobile ? -index * 100 : -index * (100 / 3); // Mobilde 1 kart, masaüstünde 3 kart
-    cardWrapper.style.transform = `translateX(${offset}%)`;
+    const cardWidth = cards[0].offsetWidth; // Kartın genişliğini al
+    const offset = -index * cardWidth; // Mobilde her bir kart için kaydırma
+    cardWrapper.style.transform = `translateX(${offset}px)`;
     currentCardIndex = index;
 }
 
 cardPrev.addEventListener('click', () => {
     const isMobile = window.innerWidth <= 768;
-    currentCardIndex = (currentCardIndex - (isMobile ? 1 : 3) + cards.length) % cards.length;
+    currentCardIndex = (currentCardIndex - 1 + cards.length) % cards.length;
     showCard(currentCardIndex);
 });
 
 cardNext.addEventListener('click', () => {
     const isMobile = window.innerWidth <= 768;
-    currentCardIndex = (currentCardIndex + (isMobile ? 1 : 3)) % cards.length;
+    currentCardIndex = (currentCardIndex + 1) % cards.length;
     showCard(currentCardIndex);
 });
 
 setInterval(() => {
     const isMobile = window.innerWidth <= 768;
-    currentCardIndex = (currentCardIndex + (isMobile ? 1 : 3)) % cards.length;
+    currentCardIndex = (currentCardIndex + 1) % cards.length;
     showCard(currentCardIndex);
 }, 5000); // 5 saniyede bir geçiş
-
 
 cardWrapper.addEventListener('touchstart', (e) => {
     touchStartX = e.touches[0].clientX;
@@ -113,10 +113,10 @@ function handleSwipe() {
     const isMobile = window.innerWidth <= 768;
     if (touchEndX < touchStartX) {
         // Sola kaydırma
-        currentCardIndex = (currentCardIndex + (isMobile ? 1 : 3)) % cards.length;
+        currentCardIndex = (currentCardIndex + 1) % cards.length;
     } else if (touchEndX > touchStartX) {
         // Sağa kaydırma
-        currentCardIndex = (currentCardIndex - (isMobile ? 1 : 3) + cards.length) % cards.length;
+        currentCardIndex = (currentCardIndex - 1 + cards.length) % cards.length;
     }
     showCard(currentCardIndex);
 }
