@@ -16,7 +16,9 @@ GitHub Pages üzerinden yayınlanmaktadır ve mobil cihazlarla tam uyumludur.
 ![YeniÇağ Oto Kurtarma Site Görseli 1](https://drive.google.com/uc?export=view&id=1-Ku6ZBEhXDoSd7gr6gH0OKHt5jysM6RK)
 
 *Mobil:*
-![YeniÇağ Oto Kurtarma Site Görseli 2](https://drive.google.com/uc?export=view&id=1XwUp8PMmgalb8kOtaq6rSSBLmopMfPMY)
+<div align="center">
+  <img src="https://drive.google.com/uc?export=view&id=1XwUp8PMmgalb8kOtaq6rSSBLmopMfPMY" width="300"/>
+</div>
 
 ---
 
@@ -37,4 +39,6 @@ The website is built entirely using **HTML, CSS, and JavaScript**, and is deploy
 ![YeniÇağ Roadside Assistance Website Screenshot 1](https://drive.google.com/uc?export=view&id=1-Ku6ZBEhXDoSd7gr6gH0OKHt5jysM6RK)
 
 *Mobil:*
-![YeniÇağ Roadside Assistance Website Screenshot 2](https://drive.google.com/uc?export=view&id=1XwUp8PMmgalb8kOtaq6rSSBLmopMfPMY)
+<div align="center">
+  <img src="https://drive.google.com/uc?export=view&id=1XwUp8PMmgalb8kOtaq6rSSBLmopMfPMY" width="300"/>
+</div>
