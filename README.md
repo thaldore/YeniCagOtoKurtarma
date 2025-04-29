@@ -1,4 +1,4 @@
-# YeniÇağ Oto Kurtarma ve Oto Tamir
+# Yeni Çağ Oto Kurtarma ve Oto Tamir
 
 ## 🌐 Açıklama (TR)
 
@@ -22,7 +22,7 @@ GitHub Pages üzerinden yayınlanmaktadır ve mobil cihazlarla tam uyumludur.
 
 ---
 
-# YeniÇağ Roadside Assistance and Auto Repair
+# Yeni Çağ Roadside Assistance and Auto Repair
 
 ## 🌐 Description (EN)
 
