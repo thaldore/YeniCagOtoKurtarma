@@ -1,16 +1,40 @@
-Yeni Çağ Oto Kurtarma ve Oto Tamir
+# YeniÇağ Oto Kurtarma ve Oto Tamir
+
+## 🌐 Açıklama (TR)
+
+Bu proje, araç sahiplerinin **yolda kaldığında hızlıca destek alabilmesi için** hazırlanmış bir tanıtım sitesidir.  
+Sade, mobil uyumlu ve kullanıcı dostu bir arayüz ile **oto çekici, tamir ve yol yardımı** hizmetleri sunulmaktadır.
+
+Site tamamen **HTML, CSS ve JavaScript** ile yazılmıştır.  
+GitHub Pages üzerinden yayınlanmaktadır ve mobil cihazlarla tam uyumludur.
+
+### 📸 Örnek Görseller
+
+*Mobil uyumlu tasarımıyla sitenin önizlemeleri:*
+
+*Web:*
+![YeniÇağ Oto Kurtarma Site Görseli 1](https://drive.google.com/uc?export=view&id=1-Ku6ZBEhXDoSd7gr6gH0OKHt5jysM6RK)
+
+*Mobil:*
+![YeniÇağ Oto Kurtarma Site Görseli 2](https://drive.google.com/uc?export=view&id=1XwUp8PMmgalb8kOtaq6rSSBLmopMfPMY)
+
 ---
 
-## 🖼️ Example Output
+# YeniÇağ Roadside Assistance and Auto Repair
 
-*Responsive web design for roadside assistance and towing services, built with HTML, CSS, and JavaScript, and deployed via GitHub Pages.*
+## 🌐 Description (EN)
 
-![YeniÇağ Roadside Assistance Website Screenshot](https://drive.google.com/uc?export=view&id=1-Ku6ZBEhXDoSd7gr6gH0OKHt5jysM6RK)
+This project is a responsive roadside **towing and repair services** landing page designed to help drivers in need.  
+It provides a simple and mobile-friendly interface that offers **roadside assistance, towing, and repair services**.
 
----
+The website is built entirely using **HTML, CSS, and JavaScript**, and is deployed through GitHub Pages with full mobile responsiveness.
 
-## 🖼️ Örnek Çıktı
+### 📸 Sample Screenshots
 
-*HTML, CSS ve JavaScript ile oluşturulmuş; GitHub Pages üzerinden yayınlanan, mobil uyumlu oto çekici, tamir ve yol yardımı sitesi.*
+*Previews of the mobile-compatible website design:*
 
-![YeniÇağ Oto Kurtarma Site Görseli](https://drive.google.com/uc?export=view&id=1-Ku6ZBEhXDoSd7gr6gH0OKHt5jysM6RK)
+*Web:*
+![YeniÇağ Roadside Assistance Website Screenshot 1](https://drive.google.com/uc?export=view&id=1-Ku6ZBEhXDoSd7gr6gH0OKHt5jysM6RK)
+
+*Mobil:*
+![YeniÇağ Roadside Assistance Website Screenshot 2](https://drive.google.com/uc?export=view&id=1XwUp8PMmgalb8kOtaq6rSSBLmopMfPMY)
